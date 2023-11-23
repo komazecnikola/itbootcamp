@@ -1,0 +1,63 @@
+body {
+    background-color: azure;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: aqua;
+}
+
+h2 {
+    color: rgb(150, 50, 125);
+}
+
+p {
+    color: #78af34;
+    font-size: 20px;
+}
+
+img {
+    width: 400px;
+    height: 300px;
+    border: 2px dashed black;
+}
+
+a {
+    color: blueviolet;
+}
+
+.treci_naslov {
+    text-align: center;
+}
+
+.paragraf {
+    text-align: right;
+    font-size: 24px;
+}
+
+h3:nth-child(9) {
+    text-align: center;
+    color: green;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 48px;
+}
+
+li:nth-child(odd) {
+    color: green;
+}
+
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color: green;
+}
+
+a:hover {
+    color: yellow;
+}
+
+a:active {
+    color: red;
+}

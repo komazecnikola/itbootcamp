@@ -1,0 +1,36 @@
+body {
+    background: #fbca41;
+    background-color: #fefff8;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h2 {
+    text-align: center;
+    color: #aa3e22;
+}
+
+img {
+    border: 12px double #617e4f;
+}
+
+.del_boy {
+    color: #f46427;
+    font-size: 24px;
+}
+
+#drugi {
+    color: #658250;
+    font-size: 20px;
+}
+
+#drugi a:link {
+    color: red;
+}
+
+#drugi a:visited {
+    color: red;
+}
+
+#drugi a:hover {
+    color: green;
+}

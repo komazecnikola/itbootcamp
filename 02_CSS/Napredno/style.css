@@ -1,0 +1,110 @@
+/* Kada više elemenata ima isto svojstvo */
+h3,
+h4 {
+    color: orange;
+}
+
+/* Pristupanje klasi */
+
+.desno_poravnanje {
+    text-align: right;
+}
+
+.crveni_tekst {
+    color: red;
+}
+
+.drugi {
+    background-color: yellow;
+}
+
+
+/* Pristupanje ID-u */
+
+#treci {
+    background-color: bisque;
+    font-style: italic;
+    /* border: solid red; */
+    border-bottom: double 5px rgb(200, 200, 100);
+    border-radius: 50%;
+}
+
+/* Prioritet selektora */
+
+#prva_stavka {
+    color: orangered;
+}
+
+.stavka {
+    color: blue;
+}
+
+li {
+    color: limegreen;
+}
+
+li {
+    color: purple;
+}
+
+#cetvrta_stavka {
+    color: green !important;
+}
+
+/* */
+
+p {
+    color: gray;
+}
+
+/* Kombinator razmak */
+
+div p {
+    /* Selektuje samo paragrafe koji su u div-u */
+    color: aquamarine;
+}
+
+div>p {
+    /* Svi potomci u div tagu čiji su direktni potomci paragrafi */
+    border: 1px solid green;
+}
+
+/* Stilizacija linka */
+
+a {
+    color: lime;
+    text-decoration: none;
+}
+
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color: brown;
+}
+
+a:hover {
+    background-color: yellow;
+}
+
+a:active {
+    background-color: aqua;
+}
+
+/* Pseudo selektori */
+
+p:first-child {
+    /* Svaki prvi potomak koji je tipa paragraf */
+    font-weight: bold;
+}
+
+li:nth-child(2n) {
+    /* Svaki drugi li */
+    font-weight: bold;
+}
+
+li:nth-child(2) {
+    /* Samo drugi li */
+    text-decoration: line-through;
+}
