@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forma za vežbu</title>
+  </head>
+  <body>
+    <form action="">
+      <fieldset>
+        <legend>Form Validation</legend>
+        <table>
+          <tr>
+            <td><label for="name">Name:</label></td>
+            <td><input type="text" id="name" /></td>
+          </tr>
+          <tr>
+            <td><label for="user">Username:</label></td>
+            <td><input type="text" id="user" /></td>
+          </tr>
+          <tr>
+            <td><label for="pass">Password:</label></td>
+            <td><input type="password" id="pass" /></td>
+          </tr>
+          <tr>
+            <td><label for="re-pass">Re-type password:</label></td>
+            <td><input type="password" id="re-pass" /></td>
+          </tr>
+          <tr>
+            <td><label for="">Gender</label></td>
+            <td>
+              <input name="gender" value="male" type="radio" />Male
+              <input name="gender" value="female" type="radio" />Female
+              <input name="gender" value="other" type="radio" />Other
+            </td>
+          </tr>
+          <tr>
+            <td><label for="">Programming skills:</label></td>
+            <td>
+              <input type="checkbox" name="skill" value="java" id="" />Java
+              <input
+                type="checkbox"
+                name="skill"
+                value="android"
+                id="android"
+              />Android
+              <input type="checkbox" name="skill" value="ruby" id="ruby" />Ruby
+              <input type="checkbox" name="skill" value=".net" id=".net" />.Net
+            </td>
+          </tr>
+          <tr>
+            <td><label for="contact">Contact no:</label></td>
+            <td><input type="text" id="contact" /></td>
+          </tr>
+          <tr>
+            <td><label for="email">Email:</label></td>
+            <td>
+              <input type="email" id="email" />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="college">College:</label></td>
+            <td>
+              <select name="college" id="college">
+                <option selected hidden value="">Select college</option>
+                <option value="Harvard">Harvard</option>
+                <option value="Stanford">Stanford</option>
+                <option value="Penn">Penn</option>
+                <option value="Caltech">Caltech</option>
+                <option value="MIT">MIT</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <input type="submit" value="Submit" />
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+    </form>
+  </body>
+</html>

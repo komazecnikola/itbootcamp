@@ -1,0 +1,48 @@
+a {
+  /*
+  font-size: 24px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: red;
+  border-radius: 10px;
+  border-top-color: blueviolet;
+  */
+
+  font-size: 42px;
+  border: 3px solid red;
+  border-radius: 5px;
+  margin: 5pt 0 0 10px;
+  padding: 15px 23px;
+  display: inline-block;
+  width: 200px;
+  height: 300px;
+}
+
+p {
+  background-color: blue;
+  border: 4px solid black;
+  width: 200px; /*
+  height: 300px; */
+  margin-top: 30px;
+  color: white;
+}
+
+/* 
+Blokovski element zauzima čitavu širinu ekrana
+To su: p, div, h1, table ...
+Ovim elementima može da se podešava width i height
+Ređaju se jedan ispod drugog
+
+Inline element zauzima samo širinu i visinu koje su potrebne da se prikaže sadržaj 
+To su: a, span, td
+Ovim elementima ne mogu da se podešavaju width i height
+Ređaju se jedan do drugog
+
+display property može da promeni ovaj value za elemente
+
+display: block; inline; inline-block; none; 
+
+Inline-block elementi su mutant, njima može da se podešava width i height ali se ređaju jedan do drugog
+
+
+*/
