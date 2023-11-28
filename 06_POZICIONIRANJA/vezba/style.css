@@ -1,0 +1,39 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  width: 100%;
+  height: 500px;
+  background: url("pizza.jpeg");
+  position: relative;
+}
+
+p {
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+
+  /* Gornji levi ugao 
+  top: 0;
+  left: 0;*/
+
+  /* Gornji desni ugao 
+  top: 0;
+  right: 0; */
+
+  /* Donji levi ugao 
+  bottom: 0;
+  left: 0; */
+
+  /* Donji desni ugao 
+  bottom: 0;
+  right: 0; */
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

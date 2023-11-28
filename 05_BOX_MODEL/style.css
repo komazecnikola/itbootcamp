@@ -1,3 +1,11 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 a {
   /*
   font-size: 24px;
@@ -21,10 +29,19 @@ a {
 p {
   background-color: blue;
   border: 4px solid black;
-  width: 200px; /*
-  height: 300px; */
+  width: 200px;
+  height: 300px;
   margin-top: 30px;
   color: white;
+}
+
+span {
+  background-color: brown;
+  color: white;
+  border: 3px solid blue;
+  padding: 30px;
+  width: 50%;
+  display: inline-block;
 }
 
 /* 

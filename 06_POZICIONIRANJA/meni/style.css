@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.topbar ul {
+  list-style: none;
+  overflow: hidden;
+}
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.topbar ul li {
+  width: 25%;
+  float: left;
+  text-align: center;
+  background-color: #222;
+  border: 1px solid white;
+}
+
+.topbar ul li a:hover {
+  background-color: red;
+}
+
+.topbar ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  padding: 10px;
+  display: block; /* bitno! */
+}
+
+/* Ostatak stranice */
+
+.ostatak {
+  position: relative;
+  top: 50px;
+  overflow: hidden;
+}
+
+aside {
+  float: left;
+  width: 30%;
+}
+
+section {
+  float: left;
+  width: 70%;
+}
+
+.ostatak aside ul {
+  list-style: none;
+}
+
+.ostatak aside ul li {
+  border: 1px solid green;
+  text-align: center;
+  background-color: darkgreen;
+}
+
+.ostatak aside ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  padding: 10px;
+  display: block;
+}
+
+.ostatak aside ul li a:hover {
+  background-color: blue;
+}

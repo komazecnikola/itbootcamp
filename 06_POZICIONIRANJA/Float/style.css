@@ -1,0 +1,24 @@
+/* 
+1) HTML: Parent - child struktura
+2) children: float 
+3) parent: overflow
+*/
+
+div {
+  background-color: brown;
+  /* overflow: hidden; */
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+p {
+  background-color: aquamarine;
+  width: 200px;
+  height: 50px;
+  float: left;
+  border: 2px solid blue;
+}
