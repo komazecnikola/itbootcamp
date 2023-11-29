@@ -37,6 +37,16 @@
   display: block; /* bitno! */
 }
 
+/* Padajući meni */
+
+.dropdown {
+  display: none;
+}
+
+.topbar ul li:nth-child(4):hover .dropdown {
+  display: block;
+}
+
 /* Ostatak stranice */
 
 .ostatak {
