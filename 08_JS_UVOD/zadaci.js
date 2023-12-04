@@ -94,3 +94,22 @@ console.log(dan);
 
 let dat = datum.getDate();
 console.log(dat);
+
+// Zadatak 4 urađen
+
+let vremeUSatima = datum.getHours();
+console.log(vremeUSatima);
+let vremeUMinutima = datum.getMinutes();
+console.log(vremeUMinutima);
+
+let vremeOdPonoci = vremeUSatima * 60 + vremeUMinutima;
+console.log(vremeOdPonoci);
+
+// Zadatak 5
+let danasDan = datum.getDate();
+let danasMesec = datum.getMonth();
+let danasGodina = datum.getFullYear();
+
+console.log(`0${danasDan}.${danasMesec + 1}.${danasGodina}`);
+
+console.log(danasGodina + "/" + (danasMesec + 1) + "/" + danasDan);
