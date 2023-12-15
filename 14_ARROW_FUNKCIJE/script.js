@@ -41,3 +41,6 @@ let echo = (s1, s2) => {
 };
 
 echo("Nikola", "Komazec");
+
+var m = 12;
+console.log(m);
