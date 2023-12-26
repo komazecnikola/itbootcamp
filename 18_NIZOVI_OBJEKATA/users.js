@@ -169,7 +169,9 @@ users.forEach((user) => {
   });
 });
 
-// Zadatak
+// Zadatak - vremenska prognoza
+
+// Zadatak 1
 
 let dan1 = {
   datum: "2023/12/22",
@@ -221,7 +223,86 @@ dani.forEach((d) => {
 });
 
 // Ispisati samo prvi datum
+// 1. način
 console.log(dani[indeksPrvog].datum);
+
+// 2. način
+for (let i = 0; i < dani.length; i++) {
+  if (maxBrMerenja == dani[i].temperature.length) {
+    console.log(dani[i].datum);
+    break; // break ne može da se koristi u forEach već samo ovde u for
+  }
+}
 
 // Ispisati samo poslednji datum
 console.log(dani[indeksPoslednjeg].datum);
+
+// 2. način
+
+for (let i = dani.length - 1; i >= 0; i--) {
+  if (maxBrMerenja == dani[i].temperature.length) {
+    console.log(dani[i].datum);
+    break;
+  }
+}
+
+// Zadatak 3
+
+let suncaniDani = 0;
+let kisniDani = 0;
+let oblacniDani = 0;
+
+dani.forEach((dan) => {
+  if (dan.sunce) {
+    suncaniDani++; // ne mora dan.sunce == true; jer po defaultu traži true
+  }
+  if (dan.kisa) {
+    kisniDani++;
+  }
+  if (dan.oblacno) {
+    oblacniDani++;
+  }
+});
+
+console.log(suncaniDani);
+console.log(kisniDani);
+console.log(oblacniDani);
+
+// Zadatak 4
+
+// Prebaciti ovo u arrow funkciju - ubucatiti u => {} pa umesto "dani" staviti "niz"
+let ukupanBrojMerenja = 0;
+let ukupnaSumaMerenja = 0;
+
+dani.forEach((dan) => {
+  ukupanBrojMerenja = ukupanBrojMerenja + dan.temperature.length;
+
+  for (let i = 0; i < dan.temperature.length; i++) {
+    ukupnaSumaMerenja = ukupnaSumaMerenja + dan.temperature[i];
+  }
+});
+
+let prosecnaUkupnaTemp = ukupnaSumaMerenja / ukupanBrojMerenja;
+
+console.log(ukupanBrojMerenja);
+console.log(ukupnaSumaMerenja);
+console.log(prosecnaUkupnaTemp);
+
+let brojDana = 0;
+
+dani.forEach((d) => {
+  let brojMerenjaDan = 0; // mora unutra da bi resetovao brojeve i merio ponovo
+  let sumaMerenjaDan = 0;
+  d.temperature.forEach((temp) => {
+    sumaMerenjaDan = sumaMerenjaDan + temp;
+    brojMerenjaDan++;
+  });
+  let prosekDan = sumaMerenjaDan / brojMerenjaDan;
+
+  console.log(prosekDan);
+  if (prosekDan > prosecnaUkupnaTemp) {
+    brojDana++; // mora unutra da bi uporedio određeni dan sa ukupnim prosekom
+  }
+});
+
+console.log(brojDana);
