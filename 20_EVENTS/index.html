@@ -29,6 +29,34 @@
         checked
       />Neopredeljen
     </div>
+
+    <div style="margin-top: 140px">
+      <label id="kvadratLabel" for="kvadratInput">Kvadriraj ovaj broj</label>
+      <input type="number" name="kvadrat" id="kvadratInput" />
+      <button id="kvadratButton">Izračunaj</button>
+      <p id="kvadratRezultat"></p>
+    </div>
+
+    <div style="margin-top: 40px">
+      <label id="polaLabel" for="polaInput">Prepolovi ovaj broj:</label>
+      <input type="number" name="pola" id="polaInput" />
+      <button id="polaButton">Izračunaj</button>
+      <p id="polaRezultat"></p>
+    </div>
+
+    <div style="margin-top: 40px">
+      <label id="precnikLabel" for="precnikInput"
+        >Izračunati
+        <span>
+          <input type="radio" name="krug" id="obimKruga" />obim
+          <input type="radio" name="krug" id="povrsinaKruga" />površinu
+        </span>
+        kruga za zadati poluprečnik:</label
+      >
+      <input type="number" name="precnik" id="precnikInput" />
+      <button id="precnikButton">Izračunaj</button>
+      <p id="precnikRezultat"></p>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
