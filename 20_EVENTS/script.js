@@ -63,3 +63,43 @@ btnIspis.addEventListener("click", () => {
   let tekst = inputTekst.value;
   pIme.innerText = `Zdravo ${tekst}`;
 });
+
+// Zadatak 6
+let radioMuski = document.getElementById("muski");
+let radioZenski = document.getElementById("zenski");
+let radioNeopredeljen = document.getElementById("neopredeljen");
+btnIspis.addEventListener("dblclick", () => {
+  // 1. Način
+  if (radioMuski.checked) {
+    console.log("Osoba muškog pola");
+  } else if (radioZenski.checked) {
+    console.log("Osoba ženskog pola");
+  } else if (radioNeopredeljen.checked) {
+    console.log("Osoba se nije opredelila");
+  } else {
+    console.log("Niste odabrali pol");
+  } // Ako nije unapred čekirano polje onda mora ovako, jer može da se desi da se klikne a da nije čekirano nijedno polje. Ako se ubaci "checked" u HTML prvo onda uvek mora biti barem jedno polje čekirano uvek pa ne mora else uslov na kraju
+
+  // 2. Način
+  // Selektuj mi input polje čiji input name ima vrednost pol i pritom je čekiran
+  let checkedPol = document.querySelector("input[name='pol']:checked");
+  console.log(`Osoba je ${checkedPol.value} pola`);
+
+  // 3. Način
+  // Selektuj mi sve radio buttone po name atributu sa getElementByName
+  let polRadios = document.getElementsByName("pol");
+  polRadios.forEach((radio) => {
+    if (radio.checked) {
+      console.log(`Osoba je ${radio.value} pola`);
+    }
+  });
+
+  // 4. Način
+  // Selektuj mi sve radio buttone po name atributu sa querySelectorAll
+  let polRadiosInput = document.querySelectorAll("input[name='pol']");
+  polRadiosInput.forEach((radio) => {
+    if (radio.checked) {
+      console.log(`Osoba je ${radio.value} pola`);
+    }
+  });
+});
