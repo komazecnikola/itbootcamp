@@ -1,4 +1,3 @@
-/*
 console.log(document); // document je objekat (koren DOM stabla - predak svim čvorovima u DOM stablu)
 console.log(document.body); // body svojstvo document objekta je objekat
 
@@ -13,10 +12,6 @@ console.log(el2); // HTML kolekcija objekata iz DOM stabla
 for (let i = 0; i < el2.length; i++) {
   console.log(el2[i]);
 }
-
-Ovo ne može: 
-el2.forEach((element) => {});
-
 
 let niz = Array.from(el2); // konvertujemo HTML kolekciju u niz prvo pa tek onda koristimo forEach petlju
 
@@ -58,8 +53,7 @@ t3.forEach((el) => {
 let t4 = document.querySelectorAll("div p.par"); // Vraća samo tri paragrafa sa "par" klasom unutar div elementa
 console.log(t4);
 
-let t4 = document.querySelectorAll("div p.par, div a.par"); // Vraća i link sa .par klasom
-*/
+let t41 = document.querySelectorAll("div p.par, div a.par"); // Vraća i link sa .par klasom
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 // Vežbanje 1
@@ -115,7 +109,7 @@ link.style.fontSize = "22px";
 link.style.textDecoration = "none";
 
 //////////////////////////////////////////////////////////////////////////////////////////////
-// Vežbanje 2
+// Vežbanje 2 - slajd broj 8
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 // 1
@@ -137,6 +131,7 @@ for (let i = 0; i < sviParagrafi.length; i++) {
   sviParagrafi[i].innerHTML += (i + 1) * (i + 1);
 }
 
+// 4
 let sveSlike = document.getElementsByTagName("img");
 console.log(sveSlike);
 
@@ -144,11 +139,71 @@ for (let i = 0; i < sveSlike.length; i++) {
   sveSlike[i].alt = "neki tekst";
 }
 
+// 5
 sviParagrafi.forEach((p, i) => {
   p.setAttribute("style", "color: purple;");
   if (i % 2 == 0) {
     p.style.backgroundColor = "green";
   } else {
     p.style.backgroundColor = "red";
+  }
+});
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Vežbanje 3 - Slajd broj 9
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+// 1
+
+let sviLinkovi = document.querySelectorAll("a");
+
+sviLinkovi.forEach((a) => {
+  a.style.padding = "5px";
+  a.style.fontSize = "18px";
+  a.style.textDecoration = "none";
+});
+
+for (let i = 0; i < sviLinkovi.length; i++) {
+  if (i % 2 == 0) {
+    sviLinkovi[i].style.backgroundColor = "green";
+    sviLinkovi[i].style.color = "purple";
+  } else {
+    sviLinkovi[i].style.backgroundColor = "blue";
+    sviLinkovi[i].style.color = "white";
+  }
+}
+
+// 2
+
+let svePngSlike = document.querySelectorAll("img[src$='.png']");
+svePngSlike.forEach((png) => {
+  png.style.border = "2px solid red";
+});
+
+// 3
+
+sviLinkovi.forEach((a) => {
+  if (a.target == "_blank") {
+    a.setAttribute("target", "_top");
+  } else {
+    a.setAttribute("target", "_blank");
+  }
+});
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Vežbanje 4 - Slajd broj 10
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+//
+let div = e1.parentNode;
+console.log(div);
+console.log(div.childNodes);
+console.log(div.childNodes[1]);
+
+div.childNodes.forEach((el) => {
+  let tip = el.nodeName;
+  if (tip != "#text") {
+    //tip=="P"
+    console.log(el);
   }
 });
