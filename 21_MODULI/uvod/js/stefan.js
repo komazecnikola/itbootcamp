@@ -1,4 +1,4 @@
-let x = 5; // pomocna promenljiva
+x = 5; // pomocna promenljiva
 
 // ................
 
