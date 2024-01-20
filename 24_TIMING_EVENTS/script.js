@@ -1,40 +1,24 @@
-// Asinhrono ili razdešeno
-window.setTimeout(() => {
-  console.log("Poruka ispisana nakon 3 sekunde");
-}, 1000 * 3);
+// setTimeout(callback funkcija koja treba da bude izvršena nakon nekog vremena, vreme)
 
-console.log(1);
-console.log(2);
+const btn1 = document.querySelector("#btn1");
+const btn2 = document.querySelector("#btn2");
+const div = document.querySelector("#ispis");
+const btn3 = document.querySelector("#btn3");
+const btn4 = document.querySelector("#btn4");
 
-window.setTimeout(() => {
-  console.log("Poruka ispisana nakon nekog vremena");
-}, 1000 * 2);
-
-console.log(3);
-console.log(4);
-
-/* 
-1) 1, 2, 3, 4, "Poruka ispisana nakon nekog vremena";
-2) 1, 2, (... ceka se 2 sekunde ...) "Poruka ispisana...", 3, 4;
-
-Izvršava se varijanta 1) jer setTimeout nije blokirajuća
-*/
-
-const btn1 = document.getElementById("btn1");
-const div = document.getElementById("ispis");
-const btn2 = document.getElementById("btn2");
-let timer = null;
+let timer;
 
 btn1.addEventListener("click", function (e) {
   e.preventDefault();
-  let datum = new Date();
-  let h = datum.getHours();
-  let m = datum.getMinutes();
-  let s = datum.getSeconds();
-  if (timer === null) {
-    timer = setTimeout(function () {
+  if (timer === undefined) {
+    timer = setTimeout(() => {
+      const datum = new Date();
+      const h = datum.getHours();
+      const m = datum.getMinutes();
+      let s = datum.getSeconds();
+      s = s < 10 ? "0" + s : "" + s;
       div.innerHTML += `${h}:${m}:${s}`;
-      timer = null;
+      timer = undefined;
     }, 2000);
   }
 });
@@ -42,5 +26,30 @@ btn1.addEventListener("click", function (e) {
 btn2.addEventListener("click", function (e) {
   e.preventDefault();
   clearTimeout(timer);
-  timer = null;
+  timer = undefined;
+});
+
+function prikaziSat() {
+  const datum = new Date();
+  const h = datum.getHours();
+  let m = datum.getMinutes();
+  m = m < 10 ? "0" + m : "" + m;
+  let s = datum.getSeconds();
+  s = s < 10 ? "0" + s : "" + s;
+  div.innerHTML = `${h}:${m}:${s}`;
+}
+
+let clock;
+
+btn3.addEventListener("click", function (e) {
+  e.preventDefault();
+  if (clock === undefined) {
+    clock = setInterval(prikaziSat, 1000 / 2);
+  }
+});
+
+btn4.addEventListener("click", function (e) {
+  e.preventDefault();
+  clearInterval(clock);
+  clock = undefined;
 });
