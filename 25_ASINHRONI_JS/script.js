@@ -78,11 +78,19 @@ request.send();
 // Zadatak 4
 request.addEventListener("readystatechange", function () {
   if (request.readyState == 4 && request.status == 200) {
-    let users = JSON.parse(request.responseText);
+    let data = JSON.parse(request.responseText);
 
-    for (let i = 0; i < users.length; i++) {
-      console.log(users[i].address.city);
-    }
+    let gradovi = [];
+    data.forEach((user) => {
+      if (
+        user.company.name.includes("Group") ||
+        user.company.name.includes("LLC")
+      ) {
+        if (gradovi.includes(user.address.city) === false)
+          gradovi.push(user.address.city);
+      }
+    });
+    console.log(gradovi);
   }
 });
 request.open("GET", "https://jsonplaceholder.typicode.com/users");
@@ -95,7 +103,10 @@ request.addEventListener("readystatechange", function () {
 
     let br = 0;
     for (let i = 0; i < users.length; i++) {
-      if (users[i].address.geo.lat < 0 && users[i].address.geo.lng < 0) {
+      if (
+        Number(users[i].address.geo.lat) < 0 &&
+        Number(users[i].address.geo.lng) < 0
+      ) {
         br++;
       }
     }
