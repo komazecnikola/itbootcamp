@@ -1,3 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+:root {
+  --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+    0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-small: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --border: 1px solid #e5e7eb;
+
+  /* COLORS */
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+}
+
 *,
 *::before,
 *::after {
@@ -7,21 +30,151 @@
 }
 
 body {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Inter", sans-serif;
+  color: var(--slate-500);
+  font-size: 1rem;
+  background-color: #f9f9f9;
 }
 
 input,
-select,
 button,
-textarea,
+select,
+label,
 option,
-label {
+textarea {
   font: inherit;
 }
 
+/* TYPOGRAPHY */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--slate-900);
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.875rem;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 1.33;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.text-lead {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.text-large {
+  font-size: 1.125rem;
+  line-height: 1.55;
+  font-weight: 400;
+}
+
+.text-paragraph {
+  font-size: 1rem;
+  line-height: 1.75;
+  font-weight: 400;
+}
+
+.text-subtle {
+  font-size: 0.875rem;
+  line-height: 1.42857;
+  font-weight: 400;
+}
+
+.text-label {
+  color: var(--slate-900);
+  font-size: 0.875rem;
+  line-height: 1.42857;
+  font-weight: 500;
+}
+
+/* BUTTONS */
+
+.btn {
+  font-size: 0.875rem;
+  line-height: 1.7142;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+}
+
+.primary {
+  border: 1px solid var(--slate-900);
+  background-color: var(--slate-900);
+}
+
+.primary:hover {
+  border: 1px solid var(--slate-700);
+  background-color: var(--slate-700);
+}
+
+.secondary {
+  background-color: #fff;
+  border: 1px solid var(--slate-200);
+  color: var(--slate-900);
+  box-shadow: var(--shadow-small);
+}
+
+.secondary:hover {
+  background-color: var(--slate-100);
+}
+
+/* FORM STYLES */
+
+.input {
+  border-radius: 6px;
+  padding: 8px 12px;
+  background-color: #fff;
+  border: 1px solid var(--slate-300);
+  font-size: 1rem;
+  color: var(--slate-900);
+  line-height: 1.5;
+}
+
+.input::placeholder {
+  font-size: 1rem;
+  color: var(--slate-400);
+  line-height: 1.5;
+}
+
+.input:focus {
+  outline: 2px solid var(--slate-400);
+}
+
+/******************************************************************************/
+/******************************** LAYOUT **************************************/
+/******************************************************************************/
 .container {
   max-width: 800px;
   margin-inline: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .header-section {
@@ -37,18 +190,19 @@ label {
   gap: 0.5rem;
 }
 
-button[type="button"] {
+.buttons-section button {
   width: 25%;
-  cursor: pointer;
   padding: 5px 10px;
 }
 
 .chat-section {
   margin-top: 2rem;
-  border: 1px solid #bbb;
+  border: var(--border);
+  background-color: #fff;
   height: 60vh;
   margin-bottom: 2rem;
   border-radius: 4px;
+  box-shadow: var(--shadow-large);
 }
 
 .input-section {
@@ -59,8 +213,9 @@ button[type="button"] {
 
 #message,
 #username {
-  width: 500px;
+  width: 100%;
   padding: 5px 10px;
+  box-shadow: var(--shadow-small);
 }
 
 .message-wrapper,
@@ -71,6 +226,28 @@ button[type="button"] {
 
 #send,
 #update {
-  cursor: pointer;
   width: 150px;
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 500px) {
+  .buttons-section {
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+
+  .buttons-section button {
+    width: 100%;
+  }
+  .chat-section {
+    height: 40vh;
+  }
+  .message-wrapper,
+  .username-wrapper {
+    flex-direction: column;
+  }
+  #send,
+  #update {
+    width: 100%;
+  }
 }

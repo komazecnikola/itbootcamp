@@ -11,7 +11,7 @@
     <header>
       <div class="container">
         <section class="header-section">
-          <h1>ITBootcamp Chat</h1>
+          <h2>ITBootcamp Chat</h2>
           <p>Choose a chatroom</p>
         </section>
       </div>
@@ -20,10 +20,14 @@
     <main>
       <div class="container">
         <section class="buttons-section">
-          <button type="button" id="general">#general</button>
-          <button type="button" id="js">#js</button>
-          <button type="button" id="homeworks">#homeworks</button>
-          <button type="button" id="tests">#tests</button>
+          <button class="btn secondary" type="button" id="general">
+            #general
+          </button>
+          <button class="btn secondary" type="button" id="js">#js</button>
+          <button class="btn secondary" type="button" id="homeworks">
+            #homeworks
+          </button>
+          <button class="btn secondary" type="button" id="tests">#tests</button>
         </section>
 
         <section class="chat-section">
@@ -37,8 +41,9 @@
               name="message"
               id="message"
               placeholder="Your message"
+              class="input"
             />
-            <input type="submit" id="send" value="Send" />
+            <input class="btn primary" type="submit" id="send" value="Send" />
           </div>
 
           <div class="username-wrapper">
@@ -47,8 +52,14 @@
               name="username"
               id="username"
               placeholder="Update username"
+              class="input"
             />
-            <input type="submit" id="update" value="Update" />
+            <input
+              class="btn primary"
+              type="submit"
+              id="update"
+              value="Update"
+            />
           </div>
         </section>
       </div>
