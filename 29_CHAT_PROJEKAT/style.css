@@ -1,0 +1,76 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+input,
+select,
+button,
+textarea,
+option,
+label {
+  font: inherit;
+}
+
+.container {
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.header-section {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.buttons-section {
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+button[type="button"] {
+  width: 25%;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.chat-section {
+  margin-top: 2rem;
+  border: 1px solid #bbb;
+  height: 60vh;
+  margin-bottom: 2rem;
+  border-radius: 4px;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#message,
+#username {
+  width: 500px;
+  padding: 5px 10px;
+}
+
+.message-wrapper,
+.username-wrapper {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#send,
+#update {
+  cursor: pointer;
+  width: 150px;
+}
