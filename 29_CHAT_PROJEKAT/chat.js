@@ -25,7 +25,7 @@ class Chatroom {
     return this._username;
   }
 
-  // Asinhroni metod addChat
+  // Asinhroni metod addChat za dodavanje dokumenata/četova
   async addChat(msg) {
     let datum = new Date();
     let timestamp = firebase.firestore.Timestamp.fromDate(datum);
@@ -41,6 +41,7 @@ class Chatroom {
     return response; // vraća promise, na koji može da se nakači .then i .catch
   }
 
+  // Metod za ispis dodatih dokumenata/četova
   getChat(callback) {
     this.chats
       .where("room", "==", this.room)

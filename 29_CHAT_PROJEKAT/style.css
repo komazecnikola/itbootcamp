@@ -178,7 +178,15 @@ h4 {
 /* LIST STYLE */
 
 ul {
-  padding-left: 1rem;
+  list-style: none;
+}
+
+li {
+  padding: 6px 12px;
+  border: 1px solid var(--slate-300);
+  display: inline-block;
+  border-radius: 12px;
+  background-color: var(--slate-50);
 }
 
 /******************************************************************************/

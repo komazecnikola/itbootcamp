@@ -12,26 +12,43 @@ export class chatUI {
   }
 
   formatDate(date) {
-    let d = date.getDate();
-    let m = date.getMonth() + 1;
-    let y = date.getFullYear();
-    let h = date.getHours();
+    let dan = date.getDate();
+    let mesec = date.getMonth() + 1;
+    let godina = date.getFullYear();
+    let sat = date.getHours();
     let min = date.getMinutes();
 
-    let datum = `0${d}.0${m}.${y}. - ${h}:0${min}`;
-    // izmeniti posle - dodati nule sa padStart()
+    // Dodajem nule ispred vrednosti koje su jednocifrene uz pomoć padStart metode, ali prvo moraju da se pretvore bojevi u string
+    dan = String(dan).padStart(2, "0");
+    mesec = String(mesec).padStart(2, "0");
+    sat = String(sat).padStart(2, "0");
+    min = String(min).padStart(2, "0");
+
+    let now = new Date();
+    let danas = now.getDate();
+    danas = String(danas).padStart(2, "0");
+    console.log(danas);
+    console.log(dan);
+
+    let datum;
+    if (dan == danas) {
+      datum = `${sat}:${min}`;
+    } else {
+      datum = `${dan}.${mesec}.${godina}. - ${sat}:${min}`;
+    }
+
     return datum;
   }
 
   templateLI(data) {
     let date = data.created_at.toDate();
-    let datum2 = this.formatDate(date);
+    let datum = this.formatDate(date);
 
     this.list.innerHTML += `
       <li> 
           <span class="text-label"> ${data.username}: </span>
           <span class="text-subtle"> ${data.message} </span>
-          <div class="text-date"> ${datum2} </div>
+          <div class="text-date"> ${datum} </div>
       </li>
     `;
   }
