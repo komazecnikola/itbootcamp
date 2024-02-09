@@ -55,33 +55,4 @@ class Chatroom {
   }
 }
 
-let chatroom1 = new Chatroom("tests", "peter");
-let chatroom2 = new Chatroom("homeworks", "jane");
-// let chatroom3 = new Chatroom("js", "d");
-// let chatroom4 = new Chatroom("general", "jacknicholsonjunior");
-// let chatroom5 = new Chatroom("js", "");
-
-// console.log(chatroom1.username, chatroom1.room);
-// console.log(chatroom2.chats);
-
-// chatroom1
-//   .addChat("Hello world!")
-//   .then(() => {
-//     console.log("Uspešno dodata poruka");
-//   })
-//   .catch((err) => {
-//     console.log("Došlo je do greške: ", err);
-//   });
-
-// chatroom2
-//   .addChat("Hello Europe!")
-//   .then(() => {
-//     console.log("Uspešno dodata poruka");
-//   })
-//   .catch((err) => {
-//     console.log("Došlo je do greške: ", err);
-//   });
-
-chatroom2.getChat((data) => {
-  console.log(data);
-});
+export default Chatroom;
