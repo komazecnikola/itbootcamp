@@ -27,12 +27,10 @@ export class chatUI {
     let now = new Date();
     let danas = now.getDate();
     danas = String(danas).padStart(2, "0");
-    console.log(danas);
-    console.log(dan);
 
     let datum;
     if (dan == danas) {
-      datum = `${sat}:${min}`;
+      datum = `today at ${sat}:${min}`;
     } else {
       datum = `${dan}.${mesec}.${godina}. - ${sat}:${min}`;
     }
@@ -51,5 +49,9 @@ export class chatUI {
           <div class="text-date"> ${datum} </div>
       </li>
     `;
+  }
+
+  deleteLI() {
+    this.list.innerHTML = "";
   }
 }

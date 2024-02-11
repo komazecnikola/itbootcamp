@@ -2,40 +2,61 @@ import Chatroom from "./chat.js";
 import { chatUI } from "./ui.js";
 
 // DOM
-const chatList = document.querySelector(".chat-list");
+const ul = document.querySelector(".chat-list");
+const inputMessage = document.querySelector("#message");
+const btnSend = document.querySelector("#send");
+const inputUsername = document.querySelector("#username");
+const btnUpdate = document.querySelector("#update");
+const updateMsg = document.querySelector(".update-msg");
+const roomBtns = document.querySelector(".buttons-section");
 
-let chatroom1 = new Chatroom("tests", "peter");
-let chatroom2 = new Chatroom("homeworks", "jane");
+let username = "anonymus";
+if (localStorage.username) {
+  username = localStorage.username;
+}
 
-// let chatroom3 = new Chatroom("js", "d");
-// let chatroom4 = new Chatroom("general", "jacknicholsonjunior");
-// let chatroom5 = new Chatroom("js", "");
+// Objekti
+let chatroom1 = new Chatroom("tests", username);
 
-// console.log(chatroom1.username, chatroom1.room);
-// console.log(chatroom2.chats);
+let chatui = new chatUI(ul);
 
-// chatroom1
-//   .addChat("Hello world!")
-//   .then(() => {
-//     console.log("Uspešno dodata poruka");
-//   })
-//   .catch((err) => {
-//     console.log("Došlo je do greške: ", err);
-//   });
+chatroom1.getChat((data) => {
+  chatui.templateLI(data);
+});
 
-// chatroom2
-//   .addChat("Hello Europe!")
-//   .then(() => {
-//     console.log("Uspešno dodata poruka");
-//   })
-//   .catch((err) => {
-//     console.log("Došlo je do greške: ", err);
-//   });
+btnSend.addEventListener("click", (e) => {
+  e.preventDefault();
+  let message = inputMessage.value;
+  chatroom1
+    .addChat(message)
+    .then(() => {
+      inputMessage.value = "";
+      // reset() može da se nakači samo na formu
+    })
+    .catch((err) => {
+      console.log("Greška: ", err);
+    });
+});
 
-console.log(chatroom1);
+btnUpdate.addEventListener("click", (e) => {
+  e.preventDefault();
+  let usernameNew = inputUsername.value;
+  chatroom1.username = usernameNew;
+  localStorage.setItem("username", usernameNew);
+  inputUsername.value = "";
+  updateMsg.textContent = `Username is updatet to ${usernameNew}`;
+  setTimeout(() => {
+    updateMsg.textContent = "";
+  }, 3000);
+});
 
-let chatUI1 = new chatUI(chatList);
-
-chatroom2.getChat((data) => {
-  chatUI1.templateLI(data);
+roomBtns.addEventListener("click", (e) => {
+  if (e.target.tagName == "BUTTON") {
+    let roomNew = e.target.id;
+    chatroom1.room = roomNew;
+    chatui.deleteLI();
+    chatroom1.getChat((data) => {
+      chatui.templateLI(data);
+    });
+  }
 });

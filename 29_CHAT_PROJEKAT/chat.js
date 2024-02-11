@@ -3,10 +3,14 @@ class Chatroom {
     this.room = r;
     this.username = u;
     this.chats = db.collection("chats");
+    this.unsub;
   }
 
   set room(r) {
     this._room = r;
+    if (this.unsub) {
+      this.unsub();
+    }
   }
 
   get room() {
@@ -43,7 +47,7 @@ class Chatroom {
 
   // Metod za ispis dodatih dokumenata/četova
   getChat(callback) {
-    this.chats
+    this.unsub = this.chats
       .where("room", "==", this.room)
       .orderBy("created_at", "asc")
       .onSnapshot((snapshot) => {
