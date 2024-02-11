@@ -1,3 +1,5 @@
+const updateMsg = document.querySelector(".update-msg");
+
 class Chatroom {
   constructor(r, u) {
     this.room = r;
@@ -20,8 +22,18 @@ class Chatroom {
   set username(u) {
     if (u.length > 2 && u.length < 10 && u.trim() != "") {
       this._username = u;
+      // zapamti u local storage
+      localStorage.setItem("username", u);
+      // ispiši notifikaciju da je username promenjen
+      updateMsg.textContent = `Username is ${u}`;
+      setTimeout(() => {
+        updateMsg.textContent = "";
+      }, 3000);
     } else {
       alert("Name invalid");
+    }
+    if (this.unsub) {
+      this.unsub();
     }
   }
 

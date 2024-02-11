@@ -22,6 +22,9 @@
 
   --blue: hsl(221.2, 83.2%, 53.3%);
   --red: hsl(346.8, 77.2%, 49.8%);
+  --green: #16a249;
+  --green-200: #d0ecdb;
+  --green-500: #8bd1a4;
 }
 
 *,
@@ -178,6 +181,8 @@ h4 {
   outline: 2px solid var(--slate-400);
 }
 
+textarea {
+}
 /* LIST STYLE */
 
 ul {
@@ -185,14 +190,27 @@ ul {
   display: flex;
   gap: 0.5rem;
   flex-direction: column;
-  align-items: flex-start;
+}
+
+.received {
+  align-self: flex-start;
+  border: 1px solid var(--slate-300);
+  background-color: var(--slate-50);
+  border-radius: 2px 12px 12px 12px;
+  max-width: 75%;
+}
+
+.sent {
+  align-self: flex-end;
+  border: 1px solid var(--green-500);
+  background-color: var(--green-200);
+  border-radius: 12px 2px 12px 12px;
+  max-width: 75%;
 }
 
 li {
   padding: 6px 12px;
-  border: 1px solid var(--slate-300);
-  border-radius: 12px;
-  background-color: var(--slate-50);
+
   box-shadow: var(--shadow-small);
 }
 
@@ -207,13 +225,14 @@ li {
 }
 
 .header-section {
-  margin-top: 2rem;
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
 }
 .buttons-section {
-  margin-top: 3rem;
+  margin-top: 1rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -228,7 +247,7 @@ li {
   margin-top: 2rem;
   border: var(--border);
   background-color: #fff;
-  height: 60vh;
+  height: 55vh;
   margin-bottom: 2rem;
   border-radius: 4px;
   box-shadow: var(--shadow-large);
@@ -243,20 +262,26 @@ li {
 }
 
 #message,
-#username {
+#username,
+#inputColor {
   width: 100%;
-  padding: 5px 10px;
   box-shadow: var(--shadow-small);
 }
 
+#inputColor {
+  height: 42px;
+}
+
 .message-wrapper,
-.username-wrapper {
+.username-wrapper,
+.color-wrapper {
   display: flex;
   gap: 0.5rem;
 }
 
 #send,
-#update {
+#update,
+#updateColor {
   width: 150px;
 }
 
@@ -298,5 +323,15 @@ li {
   #send,
   #update {
     width: 100%;
+  }
+  .received {
+    max-width: 100%;
+  }
+
+  .sent {
+    max-width: 100%;
+  }
+  textarea {
+    height: 150px;
   }
 }

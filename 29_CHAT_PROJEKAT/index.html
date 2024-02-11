@@ -35,14 +35,30 @@
         </section>
 
         <section class="input-section">
-          <div class="message-wrapper">
+          <div class="color-wrapper">
             <input
-              type="text"
+              class="input"
+              type="color"
+              id="inputColor"
+              name="favcolor"
+              value="#f9f9f9"
+            />
+            <input
+              class="btn primary"
+              type="submit"
+              id="updateColor"
+              value="Change"
+            />
+          </div>
+          <div class="message-wrapper">
+            <textarea
               name="message"
               id="message"
+              cols="1"
+              rows="1"
               placeholder="Your message"
               class="input"
-            />
+            ></textarea>
             <input class="btn primary" type="submit" id="send" value="Send" />
           </div>
 
