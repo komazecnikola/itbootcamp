@@ -324,10 +324,15 @@ li {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  opacity: 0;
 }
 
 li.sent .trash-icon {
   background: var(--green-500);
+}
+
+.trash-icon:hover {
+  opacity: 1;
 }
 
 /* RESPONSIVE DESIGN */

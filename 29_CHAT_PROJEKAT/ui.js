@@ -40,12 +40,12 @@ export class chatUI {
 
   templateLI(data) {
     let date = data.created_at.toDate();
+
     let datum = this.formatDate(date);
     let checkUsername = localStorage.getItem("username");
-    console.log(checkUsername);
 
     let messageStatus;
-    if (data.username == checkUsername) {
+    if (data.username === checkUsername) {
       messageStatus = "sent";
     } else {
       messageStatus = "received";
@@ -56,8 +56,8 @@ export class chatUI {
           <span class="text-label"> ${data.username}: </span>
           <span class="text-subtle"> ${data.message} </span>
           <div class="temp-wrapper"> 
-          <span class="text-date"> ${datum} </span>
-          <span class="trash-icon"> <img src="assets/trash-2.svg"> </span>
+            <span class="text-date"> ${datum} </span>
+            <span class="trash-icon"> <img src="assets/trash-2.svg"> </span>
           </div>
       </li>
     `;
@@ -67,3 +67,6 @@ export class chatUI {
     this.list.innerHTML = "";
   }
 }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////

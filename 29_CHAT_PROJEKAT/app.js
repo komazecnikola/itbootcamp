@@ -116,3 +116,13 @@ btnColor.addEventListener("click", (e) => {
 
   localStorage.setItem("bgColor", newColor);
 });
+
+// Briše sa ekrana poruku samo kada se klikne na kanticu
+// Pokušao sam i iz baze da briše, ali ne ide, ne umem
+
+document.addEventListener("click", (e) => {
+  if (e.target.tagName === "IMG") {
+    const messageLI = e.target.closest("li");
+    messageLI.remove();
+  }
+});
