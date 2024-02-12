@@ -55,7 +55,10 @@ export class chatUI {
       <li class="${messageStatus}"> 
           <span class="text-label"> ${data.username}: </span>
           <span class="text-subtle"> ${data.message} </span>
-          <div class="text-date"> ${datum} </div>
+          <div class="temp-wrapper"> 
+          <span class="text-date"> ${datum} </span>
+          <span class="trash-icon"> <img src="assets/trash-2.svg"> </span>
+          </div>
       </li>
     `;
   }
